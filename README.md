@@ -42,6 +42,7 @@ p	- pointer
 
 F	- expletive
 
+
 Examples
 
 Character: printf("%c", 'A'); Output:: A
