@@ -12,21 +12,35 @@ Our team chose to add %x ,%X, %b, %o, %u, %r, %R, and %p formatting. We relied o
 
 Supported Format Types
 
-Type	Output
-c	    single character
-s	    string
-r	    string in reverse
-R	    string in rot13
-d	    integer in decimal
-i	    integer
-%	    percent sign
-x	    lowercase hex
-X	    uppercase hex
-b	    binary
-o	    octal
-u	    unsigned
-p	    pointer
-F	    expletive
+TYPE	OUTPUT                                                                              
+
+c	- Single character                                                                      
+
+s	- String                                                                                
+
+r	- String in reverse                                                                     
+
+R	- String in rot13                                                                       
+
+d	- Integer in decimal                                                                    
+
+i	- integer                                                                               
+
+%	- Percent sign                                                                          
+
+x	- Lowercase hex                                                                         
+
+X	- Uppercase hex                                                                         
+
+b	- binary                                                                                
+
+o	- octal                                                                                 
+
+u	- unsigned                                                                              
+
+p	- pointer                                                                               
+
+F	- expletive
 
 Examples
 
