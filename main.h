@@ -18,3 +18,4 @@ typedef struct type
 int _putchar(char c);
 int (*get_function(const char *specifier))(va_list);
 int print_F(__attribute__ ((unused))va_list args);
+void print_upperHex(unsigned int num, int *count);

@@ -28,7 +28,7 @@ i	- integer
 
 %	- Percent sign                                                                          
 
-x	- Lowercase hex                                                                         
+Xl	- Lowercase hex                                                                         
 
 X	- Uppercase hex                                                                         
 
