@@ -12,7 +12,7 @@ Our team chose to add %x ,%X, %b, %o, %u, %r, %R, and %p formatting. We relied o
 
 # Supported Format Types
 
- TYPE	OUTPUT                                                                              
+ TYPE -	OUTPUT                                                                              
 
 c	- Single character                                                                      
 
