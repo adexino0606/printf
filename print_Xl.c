@@ -36,13 +36,13 @@ void print_lowerHex(unsigned int num, int *count)
 }
 
 /**
- * print_x - print an integer in lowercase hexadecimal
+ * print_Xl - print an integer in lowercase hexadecimal
  * @args: va_list with integer to print as current element
  *
  * Return: number of bytes printed
  */
 
-int print_x(va_list args)
+int print_Xl(va_list args)
 {
 	int count = 0;
 
