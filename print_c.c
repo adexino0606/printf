@@ -1,3 +1,4 @@
+#include "main.h"
 
 /**
  * print_c - print a char argument
