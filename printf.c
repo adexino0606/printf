@@ -1,4 +1,3 @@
-#include "main.h"
 
 /**
  * _printf - print output to stdout according to a format string
