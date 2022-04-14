@@ -39,3 +39,4 @@ int print_u(va_list args);
 void print_lowerHex(unsigned int num, int *count);
 int _printf(const char *format, ...);
 
+#endif
