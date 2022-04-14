@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 /**
   *  print_o - prints octal numbers from decimal
