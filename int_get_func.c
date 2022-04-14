@@ -19,7 +19,7 @@ int (*get_function(const char *specifier))(va_list)
 		{"b", print_b},
 		{"o", print_o},
 		{"u", print_u},
-		{"x", print_x},
+		{"xl", print_xl},
 		{"X", print_X},
 		{"p", print_p},
 		{"R", rot13},
