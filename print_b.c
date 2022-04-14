@@ -1,3 +1,4 @@
+#include "main.h"
 /**
   * print_b - prints binary numbers (unsigned)
   * @args: the number
