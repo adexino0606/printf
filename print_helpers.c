@@ -1,3 +1,4 @@
+#include "main.h"
 /**
   * print_number - we're printing some serious numbers
   * @n: that's the number, fear it.
