@@ -1,59 +1,52 @@
 #include "main.h"
 
-/**
- * _printf - print output to stdout according to a format string
- * @format: the format of the string to print
- *
- * Description: This program emulates some of the functionality of the standard
- * printf function. It does not handle precision, field width, or any of the
- * flags. It does handle all of the format specifiers except "%f" plus some
- * special format specifiers: "%b" prints a number in binary, "%R" encodes a
- * string in ROT13, and "%r" prints a string in reverse. %F is just a little
- * joke that allows you to print an expletive regardless of what you pass the
- * function `print_F`
- *
- * Return: number of characters printed (excluding null byte)
- */
 
+/**
+ * _printf - formatted output conversion and print data.
+ * @format: input string.
+ *
+ * Return: number of chars printed.
+ */
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	va_list args;
-	int (*function)(va_list) = NULL;
+	unsigned int i = 0, len = 0, ibuf = 0;
+	va_list arguments;
+	int (*function)(va_list, char *, unsigned int);
+	char *buffer;
 
-	va_start(args, format);
-
-	while (*format)
+	va_start(arguments, format), buffer = malloc(sizeof(char) * 1024);
+	if (!format || !buffer || (format[i] == '%' && !format[i + 1]))
+		return (-1);
+	if (!format[i])
+		return (0);
+	for (i = 0; format && format[i]; i++)
 	{
-		if (*format == '%' && *(format + 1) != '%')
+		if (format[i] == '%')
 		{
-			format++;
-			function = get_function(format);
-			if (*(format) == '\0')
+			if (format[i + 1] == '\0')
+			{	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
 				return (-1);
-			else if (function == NULL)
-			{
-				_putchar(*(format - 1));
-				_putchar(*format);
-				count += 2;
 			}
 			else
-				count += function(args);
-		}
-		else if (*format == '%' && *(format + 1) == '%')
-		{
-			format++;
-			_putchar('%');
-			count++;
+			{	function = get_print_func(format, i + 1);
+				if (function == NULL)
+				{
+					if (format[i + 1] == ' ' && !format[i + 2])
+						return (-1);
+					handl_buf(buffer, format[i], ibuf), len++, i--;
+				}
+				else
+				{
+					len += function(arguments, buffer, ibuf);
+					i += ev_print_func(format, i + 1);
+				}
+			} i++;
 		}
 		else
-		{
-			_putchar(*format);
-			count++;
-		}
-
-		format++;
+			handl_buf(buffer, format[i], ibuf), len++;
+		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
+			;
 	}
-	va_end(args);
-	return (count);
+	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+	return (len);
 }
