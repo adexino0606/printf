@@ -18,5 +18,3 @@ int print_F(__attribute__ ((unused))va_list args)
 	if (retVal == -1)
 		return (retVal);
 	}
-	return (4);
-}
